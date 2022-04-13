@@ -12,9 +12,10 @@ Basic Docker PHP MYSQL Environment
 $ docker-compose up
 ```
 
-Now just access localhost!!!
-
 (note: you may need to use `sudo` along the way, but we recomend to refrain from doing so whenever possible)
+
+
+Done. Now just access `localhost`!!!
 
 ## Infos
 - *PHP version:* 7.2.6
