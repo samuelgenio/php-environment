@@ -1,0 +1,21 @@
+version: '3'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - 80:80 # Troque a porta caso seja necessário
+    volumes:
+      - ./src:/var/www/html
+    links:
+      - php_database
+  php_database:
+    image: mariadb:latest
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
